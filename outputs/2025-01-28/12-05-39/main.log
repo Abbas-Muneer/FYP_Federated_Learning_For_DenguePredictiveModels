@@ -1,0 +1,27 @@
+[2025-01-28 12:05:56,732][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2025-01-28 12:06:26,753][flwr][INFO] - Flower VCE: Ray initialized with resources: {'node:127.0.0.1': 1.0, 'GPU': 1.0, 'memory': 1189181031.0, 'CPU': 8.0, 'object_store_memory': 594590515.0}
+[2025-01-28 12:06:26,753][flwr][INFO] - Initializing global parameters
+[2025-01-28 12:06:26,753][flwr][INFO] - Requesting initial parameters from one random client
+[2025-01-28 12:06:36,286][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=18012, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 600, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\ray\_private\memory_monitor.py", line 156, in raise_if_low_memory
+    raise RayOutOfMemoryError(
+ray._private.memory_monitor.RayOutOfMemoryError: More than 95% of the memory on node Abbas is used (15.64 / 15.85 GB). The top 10 memory consumers are:
+
+PID	MEM	COMMAND
+20444	0.41GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe --type=renderer --string-annotation
+24168	0.38GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe
+29496	0.32GiB	C:\Users\MSII\AppData\Local\Programs\Microsoft VS Code\Code.exe c:\Users\MSII\.vscode\extensions\ms-
+20712	0.31GiB	C:\Users\MSII\AppData\Local\Programs\Microsoft VS Code\Code.exe --type=renderer --user-data-dir=C:\U
+32128	0.31GiB	python main.py
+32552	0.31GiB	python main.py
+15920	0.3GiB	C:\Users\MSII\AppData\Local\Grammarly\DesktopIntegrations\Grammarly.Desktop.exe
+14852	0.3GiB	python main.py
+480	0.3GiB	python main.py
+31196	0.3GiB	python main.py
+
+In addition, up to 0.0 GiB of shared memory is currently being used by the Ray object store.
+---
+--- Tip: Use the `ray memory` command to list active objects in the cluster.
+--- To disable OOM exceptions, set RAY_DISABLE_MEMORY_MONITOR=1.
+---

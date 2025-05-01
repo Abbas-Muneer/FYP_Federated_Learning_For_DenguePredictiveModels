@@ -1,0 +1,49 @@
+[2024-10-31 03:06:01,011][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2024-10-31 03:06:05,960][flwr][INFO] - Flower VCE: Ray initialized with resources: {'object_store_memory': 1465743360.0, 'GPU': 1.0, 'memory': 2931486720.0, 'node:127.0.0.1': 1.0, 'CPU': 8.0}
+[2024-10-31 03:06:05,961][flwr][INFO] - Initializing global parameters
+[2024-10-31 03:06:05,962][flwr][INFO] - Requesting initial parameters from one random client
+[2024-10-31 03:06:08,307][flwr][INFO] - Received initial parameters from one random client
+[2024-10-31 03:06:08,308][flwr][INFO] - Evaluating initial parameters
+[2024-10-31 03:06:26,958][flwr][INFO] - initial parameters (loss, other metrics): 1081.2741570472717, {'accuracy': 0.12496666666666667}
+[2024-10-31 03:06:26,959][flwr][INFO] - FL starting
+[2024-10-31 03:06:26,960][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2024-10-31 03:06:48,723][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=14444, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 600, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\ray\_private\memory_monitor.py", line 156, in raise_if_low_memory
+    raise RayOutOfMemoryError(
+ray._private.memory_monitor.RayOutOfMemoryError: More than 95% of the memory on node Abbas is used (15.11 / 15.85 GB). The top 10 memory consumers are:
+
+PID	MEM	COMMAND
+25116	0.75GiB	C:\Users\MSII\anaconda3\envs\flower_tutorial\python.exe main.py num_rounds=2
+27636	0.5GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe --type=renderer --string-annotation
+16316	0.49GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe --type=renderer --string-annotation
+19804	0.49GiB	C:\Users\MSII\AppData\Local\Programs\Microsoft VS Code\Code.exe c:\Users\MSII\.vscode\extensions\ms-
+3492	0.41GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe --type=gpu-process --string-annotat
+28308	0.41GiB	C:\WINDOWS\Explorer.EXE
+12796	0.34GiB	C:\Users\MSII\AppData\Local\Grammarly\DesktopIntegrations\Grammarly.Desktop.exe
+12664	0.34GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe
+29064	0.29GiB	C:\Users\MSII\anaconda3\envs\flower_tutorial\python.exe C:\Users\MSII\anaconda3\envs\flower_tutorial
+1452	0.29GiB	C:\Users\MSII\anaconda3\envs\flower_tutorial\python.exe C:\Users\MSII\anaconda3\envs\flower_tutorial
+
+In addition, up to 0.0 GiB of shared memory is currently being used by the Ray object store.
+---
+--- Tip: Use the `ray memory` command to list active objects in the cluster.
+--- To disable OOM exceptions, set RAY_DISABLE_MEMORY_MONITOR=1.
+---
+[2024-10-31 03:07:02,117][flwr][DEBUG] - fit_round 1 received 9 results and 1 failures
+[2024-10-31 03:07:02,150][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2024-10-31 03:07:16,144][flwr][INFO] - fit progress: (1, 133.5356387346983, {'accuracy': 0.94545}, 49.1848601)
+[2024-10-31 03:07:16,145][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 10)
+[2024-10-31 03:07:37,055][flwr][DEBUG] - evaluate_round 1 received 10 results and 0 failures
+[2024-10-31 03:07:37,056][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2024-10-31 03:07:37,057][flwr][DEBUG] - fit_round 2: strategy sampled 10 clients (out of 10)
+[2024-10-31 03:08:11,596][flwr][DEBUG] - fit_round 2 received 10 results and 0 failures
+[2024-10-31 03:08:29,896][flwr][INFO] - fit progress: (2, 44.005494052078575, {'accuracy': 0.9719333333333333}, 122.93716359999999)
+[2024-10-31 03:08:29,897][flwr][DEBUG] - evaluate_round 2: strategy sampled 10 clients (out of 10)
+[2024-10-31 03:08:54,203][flwr][DEBUG] - evaluate_round 2 received 10 results and 0 failures
+[2024-10-31 03:08:54,204][flwr][INFO] - FL finished in 147.2439961
+[2024-10-31 03:08:54,205][flwr][INFO] - app_fit: losses_distributed [(1, 17.572179331816734), (2, 6.32317982854438)]
+[2024-10-31 03:08:54,205][flwr][INFO] - app_fit: metrics_distributed_fit {}
+[2024-10-31 03:08:54,206][flwr][INFO] - app_fit: metrics_distributed {}
+[2024-10-31 03:08:54,206][flwr][INFO] - app_fit: losses_centralized [(0, 1081.2741570472717), (1, 133.5356387346983), (2, 44.005494052078575)]
+[2024-10-31 03:08:54,207][flwr][INFO] - app_fit: metrics_centralized {'accuracy': [(0, 0.12496666666666667), (1, 0.94545), (2, 0.9719333333333333)]}

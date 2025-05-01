@@ -1,0 +1,121 @@
+[2025-01-20 13:20:57,144][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=1, round_timeout=None)
+[2025-01-20 13:21:01,516][flwr][INFO] - Flower VCE: Ray initialized with resources: {'node:127.0.0.1': 1.0, 'CPU': 8.0, 'memory': 2878242816.0, 'GPU': 1.0, 'object_store_memory': 1439121408.0}
+[2025-01-20 13:21:01,517][flwr][INFO] - Initializing global parameters
+[2025-01-20 13:21:01,518][flwr][INFO] - Requesting initial parameters from one random client
+[2025-01-20 13:21:03,117][flwr][INFO] - Received initial parameters from one random client
+[2025-01-20 13:21:03,118][flwr][INFO] - Evaluating initial parameters
+[2025-01-20 13:21:04,566][flwr][INFO] - initial parameters (loss, other metrics): 650.3974774479866, {'accuracy': 63.993566666666666}
+[2025-01-20 13:21:04,567][flwr][INFO] - FL starting
+[2025-01-20 13:21:04,568][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2025-01-20 13:21:33,014][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2025-01-20 13:21:33,030][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2025-01-20 13:21:33,078][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,121][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,161][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,204][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,245][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,291][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,337][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,376][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,420][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:33,469][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=11964, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 136, in launch_and_get_parameters
+    return maybe_call_get_parameters(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 163, in maybe_call_get_parameters
+    return client.get_parameters(get_parameters_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 283, in _get_parameters
+    parameters = self.numpy_client.get_parameters(config=ins.config)  # type: ignore
+AttributeError: 'NoneType' object has no attribute 'config'
+[2025-01-20 13:21:35,029][flwr][INFO] - fit progress: (1, 650.1644532084465, {'accuracy': 64.09555}, 30.461756100000002)
+[2025-01-20 13:21:35,030][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 10)
+[2025-01-20 13:21:53,261][flwr][DEBUG] - evaluate_round 1 received 10 results and 0 failures
+[2025-01-20 13:21:53,262][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2025-01-20 13:21:53,262][flwr][INFO] - FL finished in 48.695270300000004
+[2025-01-20 13:21:53,263][flwr][INFO] - app_fit: losses_distributed [(1, 83.18810374140739)]
+[2025-01-20 13:21:53,263][flwr][INFO] - app_fit: metrics_distributed_fit {}
+[2025-01-20 13:21:53,264][flwr][INFO] - app_fit: metrics_distributed {}
+[2025-01-20 13:21:53,264][flwr][INFO] - app_fit: losses_centralized [(0, 650.3974774479866), (1, 650.1644532084465)]
+[2025-01-20 13:21:53,264][flwr][INFO] - app_fit: metrics_centralized {'accuracy': [(0, 63.993566666666666), (1, 64.09555)]}

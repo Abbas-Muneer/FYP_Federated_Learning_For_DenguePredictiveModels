@@ -1,0 +1,27 @@
+[2025-01-28 12:06:00,256][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2025-01-28 12:06:35,382][flwr][INFO] - Flower VCE: Ray initialized with resources: {'object_store_memory': 458236723.0, 'GPU': 1.0, 'memory': 916473447.0, 'CPU': 8.0, 'node:127.0.0.1': 1.0}
+[2025-01-28 12:06:35,382][flwr][INFO] - Initializing global parameters
+[2025-01-28 12:06:35,382][flwr][INFO] - Requesting initial parameters from one random client
+[2025-01-28 12:06:47,838][flwr][ERROR] - [36mray::launch_and_get_parameters()[39m (pid=30872, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 600, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\ray\_private\memory_monitor.py", line 156, in raise_if_low_memory
+    raise RayOutOfMemoryError(
+ray._private.memory_monitor.RayOutOfMemoryError: More than 95% of the memory on node Abbas is used (15.37 / 15.85 GB). The top 10 memory consumers are:
+
+PID	MEM	COMMAND
+20444	0.4GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe --type=renderer --string-annotation
+24168	0.38GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe
+32128	0.31GiB	python main.py
+14852	0.3GiB	python main.py
+480	0.3GiB	python main.py
+31196	0.3GiB	python main.py
+18380	0.3GiB	python main.py
+10968	0.29GiB	python main.py
+29360	0.29GiB	python main.py
+27744	0.29GiB	python main.py
+
+In addition, up to 0.0 GiB of shared memory is currently being used by the Ray object store.
+---
+--- Tip: Use the `ray memory` command to list active objects in the cluster.
+--- To disable OOM exceptions, set RAY_DISABLE_MEMORY_MONITOR=1.
+---

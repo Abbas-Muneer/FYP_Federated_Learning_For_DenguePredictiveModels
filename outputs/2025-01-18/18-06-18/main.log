@@ -1,0 +1,11 @@
+[2025-01-18 18:06:29,028][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=1, round_timeout=None)
+[2025-01-18 18:06:34,259][flwr][INFO] - Flower VCE: Ray initialized with resources: {'GPU': 1.0, 'object_store_memory': 1423178956.0, 'memory': 2846357915.0, 'CPU': 8.0, 'node:127.0.0.1': 1.0}
+[2025-01-18 18:06:34,260][flwr][INFO] - Initializing global parameters
+[2025-01-18 18:06:34,261][flwr][INFO] - Requesting initial parameters from one random client
+[2025-01-18 18:06:36,126][flwr][INFO] - Received initial parameters from one random client
+[2025-01-18 18:06:36,127][flwr][INFO] - Evaluating initial parameters
+[2025-01-18 18:06:39,803][flwr][INFO] - initial parameters (loss, other metrics): 660.3731408119202, {'accuracy': 63.848533333333336}
+[2025-01-18 18:06:39,805][flwr][INFO] - FL starting
+[2025-01-18 18:06:39,806][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2025-01-18 18:07:33,134][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2025-01-18 18:07:33,156][flwr][WARNING] - No fit_metrics_aggregation_fn provided

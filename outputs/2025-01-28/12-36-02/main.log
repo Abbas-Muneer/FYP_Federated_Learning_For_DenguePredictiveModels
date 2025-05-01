@@ -1,0 +1,26 @@
+[2025-01-28 12:36:11,585][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2025-01-28 12:36:16,120][flwr][INFO] - Flower VCE: Ray initialized with resources: {'object_store_memory': 1293662208.0, 'node:127.0.0.1': 1.0, 'GPU': 1.0, 'CPU': 8.0, 'memory': 2587324416.0}
+[2025-01-28 12:36:16,121][flwr][INFO] - Initializing global parameters
+[2025-01-28 12:36:16,121][flwr][INFO] - Requesting initial parameters from one random client
+[2025-01-28 12:36:17,757][flwr][INFO] - Received initial parameters from one random client
+[2025-01-28 12:36:17,757][flwr][INFO] - Evaluating initial parameters
+[2025-01-28 12:36:18,949][flwr][INFO] - initial parameters (loss, other metrics): 651.2477402687073, {'accuracy': 63.848533333333336}
+[2025-01-28 12:36:18,960][flwr][INFO] - FL starting
+[2025-01-28 12:36:18,961][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2025-01-28 12:37:09,731][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2025-01-28 12:37:09,745][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2025-01-28 12:37:10,859][flwr][INFO] - fit progress: (1, 650.2098477482796, {'accuracy': 63.92925}, 51.8984477)
+[2025-01-28 12:37:10,859][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 10)
+[2025-01-28 12:37:26,917][flwr][DEBUG] - evaluate_round 1 received 10 results and 0 failures
+[2025-01-28 12:37:26,918][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2025-01-28 12:37:26,918][flwr][DEBUG] - fit_round 2: strategy sampled 10 clients (out of 10)
+[2025-01-28 12:38:15,234][flwr][DEBUG] - fit_round 2 received 10 results and 0 failures
+[2025-01-28 12:38:16,414][flwr][INFO] - fit progress: (2, 650.1640092134476, {'accuracy': 63.95531666666667}, 117.45353269999998)
+[2025-01-28 12:38:16,415][flwr][DEBUG] - evaluate_round 2: strategy sampled 10 clients (out of 10)
+[2025-01-28 12:38:32,785][flwr][DEBUG] - evaluate_round 2 received 10 results and 0 failures
+[2025-01-28 12:38:32,785][flwr][INFO] - FL finished in 133.8252972
+[2025-01-28 12:38:32,786][flwr][INFO] - app_fit: losses_distributed [(1, 83.20626014471054), (2, 83.19462817311287)]
+[2025-01-28 12:38:32,786][flwr][INFO] - app_fit: metrics_distributed_fit {}
+[2025-01-28 12:38:32,786][flwr][INFO] - app_fit: metrics_distributed {}
+[2025-01-28 12:38:32,786][flwr][INFO] - app_fit: losses_centralized [(0, 651.2477402687073), (1, 650.2098477482796), (2, 650.1640092134476)]
+[2025-01-28 12:38:32,787][flwr][INFO] - app_fit: metrics_centralized {'accuracy': [(0, 63.848533333333336), (1, 63.92925), (2, 63.95531666666667)]}

@@ -1,0 +1,75 @@
+[2025-02-02 00:22:13,300][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2025-02-02 00:22:13,338][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2025-02-02 00:22:25,369][flwr][INFO] - Flower VCE: Ray initialized with resources: {'object_store_memory': 1163712921.0, 'node:127.0.0.1': 1.0, 'CPU': 8.0, 'memory': 2327425844.0, 'GPU': 1.0}
+[2025-02-02 00:22:25,372][flwr][INFO] - Initializing global parameters
+[2025-02-02 00:22:25,372][flwr][INFO] - Requesting initial parameters from one random client
+[2025-02-02 00:22:25,956][flwr][INFO] - Flower VCE: Ray initialized with resources: {'object_store_memory': 1163712921.0, 'node:127.0.0.1': 1.0, 'GPU': 1.0, 'CPU': 8.0, 'memory': 2327425844.0}
+[2025-02-02 00:22:25,957][flwr][INFO] - Initializing global parameters
+[2025-02-02 00:22:25,957][flwr][INFO] - Requesting initial parameters from one random client
+[2025-02-02 00:22:27,792][flwr][INFO] - Received initial parameters from one random client
+[2025-02-02 00:22:27,793][flwr][INFO] - Evaluating initial parameters
+[2025-02-02 00:22:28,027][flwr][INFO] - Received initial parameters from one random client
+[2025-02-02 00:22:28,027][flwr][INFO] - Evaluating initial parameters
+[2025-02-02 00:22:29,392][flwr][INFO] - initial parameters (loss, other metrics): 651.0303196310997, {'accuracy': 64.05253333333333}
+[2025-02-02 00:22:29,393][flwr][INFO] - FL starting
+[2025-02-02 00:22:29,393][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2025-02-02 00:22:29,732][flwr][INFO] - initial parameters (loss, other metrics): 657.8924874663353, {'accuracy': 63.848533333333336}
+[2025-02-02 00:22:29,732][flwr][INFO] - FL starting
+[2025-02-02 00:22:29,732][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2025-02-02 00:24:47,123][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2025-02-02 00:24:47,154][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2025-02-02 00:24:47,227][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2025-02-02 00:24:47,261][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2025-02-02 00:24:49,407][flwr][INFO] - fit progress: (1, 650.2043679952621, {'accuracy': 64.02498333333334}, 139.6749914)
+[2025-02-02 00:24:49,407][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 10)
+[2025-02-02 00:24:49,501][flwr][INFO] - fit progress: (1, 650.2250109314919, {'accuracy': 64.0713}, 140.1079856)
+[2025-02-02 00:24:49,501][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 10)
+[2025-02-02 00:25:51,134][flwr][DEBUG] - evaluate_round 1 received 10 results and 0 failures
+[2025-02-02 00:25:51,134][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2025-02-02 00:25:51,135][flwr][DEBUG] - fit_round 2: strategy sampled 10 clients (out of 10)
+[2025-02-02 00:25:52,145][flwr][DEBUG] - evaluate_round 1 received 10 results and 0 failures
+[2025-02-02 00:25:52,146][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2025-02-02 00:25:52,147][flwr][DEBUG] - fit_round 2: strategy sampled 10 clients (out of 10)
+[2025-02-02 00:27:54,282][flwr][ERROR] - [36mray::launch_and_fit()[39m (pid=37100, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 600, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\ray\_private\memory_monitor.py", line 156, in raise_if_low_memory
+    raise RayOutOfMemoryError(
+ray._private.memory_monitor.RayOutOfMemoryError: More than 95% of the memory on node Abbas is used (15.09 / 15.85 GB). The top 10 memory consumers are:
+
+PID	MEM	COMMAND
+40772	0.47GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe --type=renderer --string-annotation
+38796	0.42GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe
+43828	0.42GiB	C:\Users\MSII\AppData\Local\Programs\Microsoft VS Code\Code.exe --type=renderer --user-data-dir=C:\U
+46656	0.4GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe --type=renderer --string-annotation
+30384	0.37GiB	C:\Users\MSII\AppData\Local\Grammarly\DesktopIntegrations\Grammarly.Desktop.exe
+29376	0.35GiB	python C:\Users\MSII\Desktop\FL_Draft1\main.py
+53732	0.34GiB	python C:\Users\MSII\Desktop\FL_Draft1\main.py
+30080	0.34GiB	C:\WINDOWS\Explorer.EXE
+24456	0.29GiB	C:\Users\MSII\AppData\Local\Programs\Microsoft VS Code\Code.exe --max-old-space-size=3072 c:\Users\M
+30596	0.26GiB	C:\Users\MSII\AppData\Local\Google\Chrome\Application\chrome.exe --type=gpu-process --string-annotat
+
+In addition, up to 0.0 GiB of shared memory is currently being used by the Ray object store.
+---
+--- Tip: Use the `ray memory` command to list active objects in the cluster.
+--- To disable OOM exceptions, set RAY_DISABLE_MEMORY_MONITOR=1.
+---
+[2025-02-02 00:28:51,244][flwr][DEBUG] - fit_round 2 received 9 results and 1 failures
+[2025-02-02 00:28:56,242][flwr][INFO] - fit progress: (2, 650.1622874736786, {'accuracy': 64.02466666666666}, 386.84864930000003)
+[2025-02-02 00:28:56,242][flwr][DEBUG] - evaluate_round 2: strategy sampled 10 clients (out of 10)
+[2025-02-02 00:28:58,300][flwr][DEBUG] - fit_round 2 received 10 results and 0 failures
+[2025-02-02 00:29:02,385][flwr][INFO] - fit progress: (2, 650.1491099596024, {'accuracy': 64.00966666666666}, 392.653035)
+[2025-02-02 00:29:02,386][flwr][DEBUG] - evaluate_round 2: strategy sampled 10 clients (out of 10)
+[2025-02-02 00:30:17,278][flwr][DEBUG] - evaluate_round 2 received 10 results and 0 failures
+[2025-02-02 00:30:17,279][flwr][INFO] - FL finished in 467.8854375
+[2025-02-02 00:30:17,280][flwr][INFO] - app_fit: losses_distributed [(1, 83.21288976073265), (2, 83.20025464296342)]
+[2025-02-02 00:30:17,280][flwr][INFO] - app_fit: metrics_distributed_fit {}
+[2025-02-02 00:30:17,280][flwr][INFO] - app_fit: metrics_distributed {}
+[2025-02-02 00:30:17,280][flwr][INFO] - app_fit: losses_centralized [(0, 651.0303196310997), (1, 650.2250109314919), (2, 650.1622874736786)]
+[2025-02-02 00:30:17,281][flwr][INFO] - app_fit: metrics_centralized {'accuracy': [(0, 64.05253333333333), (1, 64.0713), (2, 64.02466666666666)]}
+[2025-02-02 00:30:20,608][flwr][DEBUG] - evaluate_round 2 received 10 results and 0 failures
+[2025-02-02 00:30:20,608][flwr][INFO] - FL finished in 470.8761855
+[2025-02-02 00:30:20,609][flwr][INFO] - app_fit: losses_distributed [(1, 83.22157537341118), (2, 83.2029213309288)]
+[2025-02-02 00:30:20,610][flwr][INFO] - app_fit: metrics_distributed_fit {}
+[2025-02-02 00:30:20,611][flwr][INFO] - app_fit: metrics_distributed {}
+[2025-02-02 00:30:20,611][flwr][INFO] - app_fit: losses_centralized [(0, 657.8924874663353), (1, 650.2043679952621), (2, 650.1491099596024)]
+[2025-02-02 00:30:20,611][flwr][INFO] - app_fit: metrics_centralized {'accuracy': [(0, 63.848533333333336), (1, 64.02498333333334), (2, 64.00966666666666)]}

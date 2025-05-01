@@ -1,0 +1,258 @@
+[2025-02-03 00:05:51,661][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2025-02-03 00:05:55,979][flwr][INFO] - Flower VCE: Ray initialized with resources: {'node:127.0.0.1': 1.0, 'GPU': 1.0, 'memory': 2799366144.0, 'object_store_memory': 1399683072.0, 'CPU': 8.0}
+[2025-02-03 00:05:55,981][flwr][INFO] - Initializing global parameters
+[2025-02-03 00:05:55,981][flwr][INFO] - Requesting initial parameters from one random client
+[2025-02-03 00:05:58,091][flwr][INFO] - Received initial parameters from one random client
+[2025-02-03 00:05:58,091][flwr][INFO] - Evaluating initial parameters
+[2025-02-03 00:06:00,458][flwr][INFO] - initial parameters (loss, other metrics): 651.4843763709068, {'accuracy': 0.49709166666666665, 'precision': 0.4962923552688458, 'recall': 0.24822871968865381, 'f1_score': 0.33093493275978664}
+[2025-02-03 00:06:00,470][flwr][INFO] - FL starting
+[2025-02-03 00:06:00,471][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2025-02-03 00:06:52,034][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2025-02-03 00:06:52,046][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2025-02-03 00:06:54,355][flwr][INFO] - fit progress: (1, 650.1541734337807, {'accuracy': 0.502825, 'precision': 0.5051856808297089, 'recall': 0.3767089112862988, 'f1_score': 0.4315888758681796}, 53.884739100000004)
+[2025-02-03 00:06:54,356][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 10)
+[2025-02-03 00:07:01,074][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=34136, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:01,079][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=52912, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:01,204][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=32300, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:01,343][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=7132, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:08,446][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=52912, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:08,618][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=34136, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:08,736][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=32300, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:08,899][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=7132, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:13,864][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=52912, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:13,925][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=34136, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:07:13,929][flwr][DEBUG] - evaluate_round 1 received 0 results and 10 failures
+[2025-02-03 00:07:13,931][flwr][DEBUG] - fit_round 2: strategy sampled 10 clients (out of 10)
+[2025-02-03 00:08:21,474][flwr][DEBUG] - fit_round 2 received 10 results and 0 failures
+[2025-02-03 00:08:24,745][flwr][INFO] - fit progress: (2, 650.1355166435242, {'accuracy': 0.5042083333333334, 'precision': 0.5060123868508813, 'recall': 0.4416225925556332, 'f1_score': 0.4716299144767809}, 144.2747622)
+[2025-02-03 00:08:24,746][flwr][DEBUG] - evaluate_round 2: strategy sampled 10 clients (out of 10)
+[2025-02-03 00:08:33,913][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=32300, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:33,974][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=52912, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:34,351][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=7132, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:34,395][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=34136, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:42,176][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=32300, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:42,381][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=52912, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:42,679][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=7132, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:42,986][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=34136, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:48,303][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=32300, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)
+[2025-02-03 00:08:48,323][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=52912, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 321, in _evaluate
+    results = self.numpy_client.evaluate(parameters, ins.config)  # type: ignore
+  File "C:\Users\MSII\Desktop\FL_Draft1\client.py", line 58, in evaluate
+    loss, accuracy = test(self.model, self.valloader, self.device)
+ValueError: too many values to unpack (expected 2)

@@ -1,0 +1,4 @@
+[2025-01-28 12:06:51,412][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=2, round_timeout=None)
+[2025-01-28 12:07:27,748][flwr][INFO] - Flower VCE: Ray initialized with resources: {'node:127.0.0.1': 1.0, 'object_store_memory': 217057689.0, 'CPU': 8.0, 'memory': 434115380.0, 'GPU': 1.0}
+[2025-01-28 12:07:27,749][flwr][INFO] - Initializing global parameters
+[2025-01-28 12:07:27,749][flwr][INFO] - Requesting initial parameters from one random client

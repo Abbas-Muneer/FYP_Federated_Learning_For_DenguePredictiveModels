@@ -1,0 +1,21 @@
+[2025-01-18 17:35:41,072][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=1, round_timeout=None)
+[2025-01-18 17:35:45,573][flwr][INFO] - Flower VCE: Ray initialized with resources: {'GPU': 1.0, 'CPU': 8.0, 'object_store_memory': 1294820966.0, 'memory': 2589641934.0, 'node:127.0.0.1': 1.0}
+[2025-01-18 17:35:45,574][flwr][INFO] - Initializing global parameters
+[2025-01-18 17:35:45,574][flwr][INFO] - Requesting initial parameters from one random client
+[2025-01-18 17:35:47,202][flwr][INFO] - Received initial parameters from one random client
+[2025-01-18 17:35:47,203][flwr][INFO] - Evaluating initial parameters
+[2025-01-18 17:35:48,607][flwr][INFO] - initial parameters (loss, other metrics): 656.8435251116753, {'accuracy': 64.11733333333333}
+[2025-01-18 17:35:48,618][flwr][INFO] - FL starting
+[2025-01-18 17:35:48,618][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2025-01-18 17:36:16,333][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2025-01-18 17:36:16,350][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2025-01-18 17:36:17,773][flwr][INFO] - fit progress: (1, 650.164920926094, {'accuracy': 64.0896}, 29.1549981)
+[2025-01-18 17:36:17,774][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 10)
+[2025-01-18 17:36:42,614][flwr][DEBUG] - evaluate_round 1 received 10 results and 0 failures
+[2025-01-18 17:36:42,615][flwr][WARNING] - No evaluate_metrics_aggregation_fn provided
+[2025-01-18 17:36:42,615][flwr][INFO] - FL finished in 53.9972554
+[2025-01-18 17:36:42,616][flwr][INFO] - app_fit: losses_distributed [(1, 83.18526920080186)]
+[2025-01-18 17:36:42,616][flwr][INFO] - app_fit: metrics_distributed_fit {}
+[2025-01-18 17:36:42,617][flwr][INFO] - app_fit: metrics_distributed {}
+[2025-01-18 17:36:42,617][flwr][INFO] - app_fit: losses_centralized [(0, 656.8435251116753), (1, 650.164920926094)]
+[2025-01-18 17:36:42,617][flwr][INFO] - app_fit: metrics_centralized {'accuracy': [(0, 64.11733333333333), (1, 64.0896)]}
