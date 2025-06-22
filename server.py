@@ -23,9 +23,18 @@ def get_evaluate_fn(num_classes: int, testloader):
         state_dict = OrderedDict({k: torch.Tensor(v) for k, v in params_dict})
         model.load_state_dict(state_dict, strict=True)
 
-        loss, accuracy = test(model, testloader, device)
+        loss, accuracy, prec, rec, f1 = test(model, testloader, device)
 
-        return loss, {"accuracy": accuracy}
+        print(f"→ Evaluation after Round")
+        print(f"   Loss      : {loss:.4f}")
+        print(f"   Accuracy  : {accuracy:.4f}")
+        print(f"   Precision : {prec:.4f}")
+        print(f"   Recall    : {rec:.4f}")
+        print(f"   F1-Score  : {f1:.4f}")
+
+
+        return loss, {"accuracy": accuracy, "precision": prec, "recall": rec, "f1_score": f1}
+        
 
         
     return evaluate_fn

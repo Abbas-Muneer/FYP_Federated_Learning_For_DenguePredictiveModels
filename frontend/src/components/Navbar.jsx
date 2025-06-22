@@ -1,9 +1,10 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "../services/api";
 
 const Navbar = ({ user, setUser }) => {
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogout = async () => {
         try {
@@ -15,20 +16,42 @@ const Navbar = ({ user, setUser }) => {
         }
     };
 
-    return (
-        <nav className="flex items-center justify-between px-6 py-3 bg-[#1b1b1b] text-white shadow-md">
-            <div className="text-xl font-bold">DENGFL</div>
-            <div className="flex gap-5 items-center">
-                <Link className="hover:underline" to="/client">Client Page</Link>
-                <Link className="hover:underline" to="/admin">Admin Page</Link>
+    const handleRoleSwitch = async (targetPath) => {
+        try {
+            await axios.post("/logout");
+            setUser(null);
+            navigate(targetPath); 
+        } catch (error) {
+            console.error("Role switch failed");
+        }
+    };
 
+    return (
+        <nav className="bg-[#1b1b1b] text-white p-4 flex justify-between items-center">
+            <div className="text-lg font-bold">FL System</div>
+            <div className="flex gap-4 items-center">
+                <button>Home</button>
+                <button>FL Train</button>
+                {user?.is_admin && location.pathname !== "/client" && (
+                    <button
+                        onClick={() => handleRoleSwitch("/client")}
+                        className="hover:underline"
+                    >
+                        Client Page
+                    </button>
+                )}
+                {!user?.is_admin && location.pathname !== "/admin" && (
+                    <button
+                        onClick={() => handleRoleSwitch("/admin")}
+                        className="hover:underline"
+                    >
+                        Admin Page
+                    </button>
+                )}
                 {user && (
-                    <>
-                        <span className="text-sm italic">Logged in as: {user.name}</span>
-                        <button onClick={handleLogout} className="ml-4 bg-red-500 px-3 py-1 rounded text-sm">
-                            Logout
-                        </button>
-                    </>
+                    <button onClick={handleLogout} className="hover:underline">
+                        Logout
+                    </button>
                 )}
             </div>
         </nav>
@@ -36,3 +59,4 @@ const Navbar = ({ user, setUser }) => {
 };
 
 export default Navbar;
+   

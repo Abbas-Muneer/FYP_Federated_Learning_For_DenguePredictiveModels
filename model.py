@@ -11,6 +11,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 import flwr as fl
 from typing import Dict, Union
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
+import os
 
 
 
@@ -18,7 +21,7 @@ class Net(nn.Module):
     def __init__(self, num_classes: int = 1):
         super(Net, self).__init__()
         
-        # Fully connected layers for the new dataset
+        # 
         self.fc1 = nn.Linear(6, 64)  # 6 input features
         self.dropout = nn.Dropout(0.2)  # Dropout for regularization
         self.fc2 = nn.Linear(64, 32)
@@ -46,17 +49,31 @@ def train(net, trainloader, optimizer, epochs, device: str):
 
 
 def test(net, testloader, device: str):
+    net.eval().to(device)
+    all_preds, all_labels = [], []
+    total_loss = 0.0
     criterion = torch.nn.BCEWithLogitsLoss()
-    correct, loss = 0, 0.0
-    net.eval()
-    net.to(device)
+
     with torch.no_grad():
-        for data in testloader:
-            features, labels = data[0].to(device), data[1].to(device)
-            outputs = net(features)
-            loss += criterion(outputs.squeeze(), labels).item()
-            predicted = torch.round(torch.sigmoid(outputs)).int()
-            correct += (predicted == labels.int()).sum().item()
-    
-    accuracy = correct / len(testloader.dataset)
-    return loss, accuracy
+        for features, labels in testloader:
+            features, labels = features.to(device), labels.to(device)
+            outputs = net(features).squeeze()
+            total_loss += criterion(outputs, labels).item()
+            probs = torch.sigmoid(outputs)
+            preds = torch.round(probs)
+            all_preds.extend(preds.cpu().numpy())
+            all_labels.extend(labels.cpu().numpy())
+
+    acc = accuracy_score(all_labels, all_preds)
+    prec = precision_score(all_labels, all_preds, zero_division=0)
+    rec = recall_score(all_labels, all_preds, zero_division=0)
+    f1 = f1_score(all_labels, all_preds, zero_division=0)
+
+    cm = confusion_matrix(all_labels, all_preds)
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Not Infected", "Infected"])
+    disp.plot(cmap="Blues")
+    os.makedirs("flower_graphs", exist_ok=True)
+    plt.savefig("flower_graphs/confusion_matrix.png")
+    plt.close()
+
+    return total_loss, acc, prec, rec, f1

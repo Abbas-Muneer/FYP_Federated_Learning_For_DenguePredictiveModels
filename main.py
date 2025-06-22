@@ -9,20 +9,21 @@ from client import generate_client_fn
 from server import get_on_fit_config, get_evaluate_fn
 import time
 import flwr as fl
+from model import test
 
 
 @hydra.main(config_path="conf", config_name="base", version_base=None)
 def main(cfg: DictConfig):
-    # 1️⃣ Parse config & get experiment output dir
+    # 1️ Parse config & get experiment output dir
     print(OmegaConf.to_yaml(cfg))
 
-    # 2️⃣ Prepare Dataset
+    # 2️ Prepare Dataset
     trainloaders, validationloaders, testloader = prepare_dataset(cfg.num_clients, cfg.batch_size)
 
-    # 3️⃣ Define Clients
+    # 3️ Define Clients
     client_fn = generate_client_fn(trainloaders, validationloaders, cfg.num_classes)
 
-    # 4️⃣ Define FL Strategy
+    # 4️ Define FL Strategy
     strategy = fl.server.strategy.FedAvg(
         fraction_fit=0.00001,
         min_fit_clients=cfg.num_clients_per_round_fit,
@@ -34,7 +35,7 @@ def main(cfg: DictConfig):
     )
 
 
-    # 5️⃣ Start Simulation
+    # 5️ Start Simulation
     history = fl.simulation.start_simulation(
         client_fn=client_fn,
         num_clients=cfg.num_clients,
@@ -44,7 +45,7 @@ def main(cfg: DictConfig):
     )
 
 
-    # 6️⃣ Save Training Results
+    # 6️ Save Training Results
     save_path = HydraConfig.get().runtime.output_dir
     results_path = Path(save_path) / 'results.pkl'
 
@@ -52,13 +53,19 @@ def main(cfg: DictConfig):
     with open(str(results_path), 'wb') as h:
         pickle.dump(results, h, protocol=pickle.HIGHEST_PROTOCOL)
 
-    # 7️⃣ Extract Final Accuracy & Loss
+    # 7️ Extract Final Accuracy & Loss
     final_accuracy = history.metrics_centralized['accuracy'][-1][1]  # Latest accuracy
     final_loss = history.losses_centralized[-1][1]  # Latest loss
+    final_prec = history.metrics_centralized["precision"][-1][1]
+    final_rec = history.metrics_centralized["recall"][-1][1]
+    final_f1 = history.metrics_centralized["f1_score"][-1][1]
 
     print(f"FINAL_ACCURACY: {final_accuracy}")
     print(f"FINAL_LOSS: {final_loss}")
+    print(f"FINAL_PRECISION: {final_prec:.4f}")
+    print(f"FINAL_RECALL: {final_rec:.4f}")
+    print(f"FINAL_F1_SCORE: {final_f1:.4f}")
 
-
+    
 if __name__ == "__main__":
     main()

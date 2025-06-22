@@ -8,7 +8,7 @@ from omegaconf import DictConfig
 @hydra.main(config_path="conf", config_name="base", version_base=None)
 def client_contribution(cfg: DictConfig):
     #  Load the client dataset
-    client_data_path = r"C:\Users\MSII\Desktop\FL_Draft1\client_2.xlsx"  # Replace with the actual path
+    client_data_path = r"C:\Users\MSII\Desktop\FL_Draft1\client_2.xlsx"  
     df = pd.read_excel(client_data_path)
 
     # Prepare the dataset (features and target)

@@ -1,0 +1,10 @@
+batch_size: 20
+config_fit:
+  local_epochs: 10
+  lr: 0.01
+  momentum: 0.9
+num_classes: 1
+num_clients: 10
+num_clients_per_round_eval: 10
+num_clients_per_round_fit: 10
+num_rounds: 1

@@ -55,9 +55,13 @@ class FlowerClient(fl.client.NumPyClient):
     def evaluate(self, parameters: NDArray, config: Dict[str, Scalar]):
         self.set_parameters(parameters)
 
-        loss, accuracy = test(self.model, self.valloader, self.device)
-
-        return float(loss), len(self.valloader.dataset), {'accuracy:': accuracy}
+        loss, acc, prec, rec, f1 = test(self.model, self.valloader, self.device)
+        return loss, len(self.valloader.dataset), {
+            "accuracy": acc,
+            "precision": prec,
+            "recall": rec,
+            "f1_score": f1,
+        }
     
 
 

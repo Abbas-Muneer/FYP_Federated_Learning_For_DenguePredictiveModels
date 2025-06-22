@@ -47,21 +47,20 @@ def login():
     data = request.get_json()
     email = data.get("email")
     password = data.get("password")
-
+    
     user = Client.query.filter_by(email=email).first()
-    if not user or user.password != password:  
-        return jsonify({"error": "Invalid credentials."}), 401
 
-    session["user_id"] = user.id
-    session["user_name"] = user.name
-    session["is_admin"] = user.is_admin  
+    if user and user.password == password:  
+        session["user_id"] = user.id  
+        print("Session set:", session)  
+        return jsonify({
+            "message": "Login successful.",
+            "user_id": user.id,
+            "name": user.name,
+            "is_admin": user.is_admin
+        }), 200
 
-    return jsonify({
-        "message": "Login successful.",
-        "user_id": user.id,
-        "name": user.name,
-        "is_admin": user.is_admin  
-    }), 200
+    return jsonify({ "error": "Invalid credentials" }), 401
 
 # Logout
 @admin_blueprint.route('/logout', methods=['POST'])
@@ -73,13 +72,11 @@ def logout():
 # Check Session
 @admin_blueprint.route('/session', methods=['GET'])
 def get_session():
+    print("SESSION DATA:", session)  # Debug print
     if "user_id" not in session:
         return jsonify({"user": None})
 
     user = Client.query.get(session["user_id"])
-    if not user:
-        return jsonify({"user": None})
-
     return jsonify({
         "user": {
             "id": user.id,

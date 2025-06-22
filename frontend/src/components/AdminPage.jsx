@@ -2,17 +2,22 @@ import React, { useEffect, useState } from "react";
 import axios from "../services/api";
 import UpdateConfig from "./UpdateConfig";
 
-const AdminPage = () => {
+
+const AdminPage = ({ user }) => {
     const [clients, setClients] = useState([]);
     const [error, setError] = useState("");
-    const [isTraining, setIsTraining] = useState(false);  
+    const [isTraining, setIsTraining] = useState(false);
     const [summary, setSummary] = useState({
         accuracy: null,
         loss: null,
         last_trained: null
     });
 
-    // Fetch global summary
+    useEffect(() => {
+        fetchClients();
+        fetchSummary();
+    }, []);
+
     const fetchSummary = async () => {
         try {
             const response = await axios.get("/admin/summary");
@@ -26,7 +31,6 @@ const AdminPage = () => {
         }
     };
 
-    // Fetch client details
     const fetchClients = async () => {
         try {
             const response = await axios.get("/admin/get-clients");
@@ -36,13 +40,8 @@ const AdminPage = () => {
         }
     };
 
-    useEffect(() => {
-        fetchClients();
-        fetchSummary();
-    }, []);
-
     const handleStartTraining = async () => {
-        setIsTraining(true); 
+        setIsTraining(true);
         try {
             const response = await axios.post("/admin/start-fl-training");
             alert(`Training completed. Accuracy: ${response.data.accuracy}, Loss: ${response.data.loss}`);
@@ -51,59 +50,69 @@ const AdminPage = () => {
         } catch (error) {
             alert("Failed to start training.");
         } finally {
-            setIsTraining(false); 
+            setIsTraining(false);
         }
     };
 
     return (
-        <div className="h-screen text-[#1b1b1b] flex flex-col items-center justify-center">
-            <h1 className="text-4xl poppins-semibold">Admin Page</h1>
-            <button 
-                className="mt-2 bg-[#1b1b1b] text-white rounded-md p-2 poppins-regular text-sm flex items-center justify-center"
-                onClick={handleStartTraining}
-                disabled={isTraining}  
-            >
-                {isTraining ? "Training..." : "Start Training"} {/* <-- Dynamic button text */}
-            </button>
+        <div className="min-h-screen bg-white flex flex-col">
+          
+            <main className="flex flex-col items-center px-4 py-6 w-full max-w-screen-xl mx-auto">
+                <h1 className="text-2xl font-bold mb-4 text-center">Admin Page</h1>
 
-            {error && <p className="mt-2 text-[#1b1b1b] poppins-medium text-xs" style={{ color: "red" }}>{error}</p>}
+                <button
+                    className="bg-black text-white px-6 py-2 rounded text-sm mb-4"
+                    onClick={handleStartTraining}
+                    disabled={isTraining}
+                >
+                    {isTraining ? "Training..." : "Start Training"}
+                </button>
 
-            <div className="flex gap-5 mt-5 w-full p-10">
-                <div className="flex flex-col border border-gray-200 shadow-md gap-5 rounded-md p-2 w-1/3">
-                    <h2 className="poppins-semibold text-md text-center">Global Summary</h2>
-                    <p className="poppins-medium text-xs">Accuracy: {summary.accuracy ?? "N/A"}%</p>
-                    <p className="poppins-medium text-xs">Loss: {summary.loss ?? "N/A"}</p>
-                    <p className="poppins-medium text-xs">Last Trained: {summary.last_trained ?? "N/A"}</p>
-                </div>
-                <div className="flex flex-col border border-gray-200 w-1/3 shadow-md rounded-md p-2">
-                    <h2 className="poppins-semibold text-md text-center mb-2">Client Details</h2>
-                    <table className="border border-gray-200 rounded-md ">
-                        <thead>
-                            <tr className="flex gap-2 p-2 poppins-regular text-xs">
-                                <th>Client ID</th>
-                                <th>Dataset Name</th>
-                                <th>Accuracy</th>
-                                <th>Loss</th>
-                                <th>Contribution Score</th>
-                            </tr>
-                        </thead>
-                        <tbody className="border border-gray-200 rounded-md">
-                            {clients.map((client) => (
-                                <tr className="flex gap-2 p-2 poppins-regular text-xs" key={client.id}>
-                                    <td>{client.client_id}</td>
-                                    <td>{client.dataset_name}</td>
-                                    <td>{client.accuracy}</td>
-                                    <td>{client.loss}</td>
-                                    <td>{client.contribution_score}</td>
+                {error && <p className="text-sm text-red-600 mb-4">{error}</p>}
+
+                <div className="flex flex-col lg:flex-row gap-6 w-full">
+                    {/* Global Summary Card */}
+                    <div className="flex-1 border border-gray-200 shadow-md rounded-md p-4">
+                        <h2 className="text-md font-semibold mb-2 text-center">Global Summary</h2>
+                        <p className="text-sm">Accuracy: {summary.accuracy ?? "N/A"}%</p>
+                        <p className="text-sm">Loss: {summary.loss ?? "N/A"}</p>
+                        <p className="text-sm">Last Trained: {summary.last_trained ?? "N/A"}</p>
+                    </div>
+
+                    {/* Client Table */}
+                    <div className="flex-1 border border-gray-200 shadow-md rounded-md p-4 overflow-auto">
+                        <h2 className="text-md font-semibold mb-2 text-center">Client Details</h2>
+                        <table className="w-full text-sm">
+                            <thead>
+                                <tr className="text-left border-b">
+                                    <th className="p-2">Client ID</th>
+                                    <th className="p-2">Dataset</th>
+                                    <th className="p-2">Accuracy</th>
+                                    <th className="p-2">Loss</th>
+                                    <th className="p-2">Score</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {clients.map((client) => (
+                                    <tr key={client.id} className="border-b">
+                                        <td className="p-2">{client.client_id}</td>
+                                        <td className="p-2">{client.dataset_name}</td>
+                                        <td className="p-2">{client.accuracy}</td>
+                                        <td className="p-2">{client.loss}</td>
+                                        <td className="p-2">{client.contribution_score}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {/* Update Config */}
+                    <div className="flex-1 border border-gray-200 shadow-md rounded-md p-4">
+                        <h2 className="text-md font-semibold mb-2 text-center">Update Config</h2>
+                        <UpdateConfig />
+                    </div>
                 </div>
-                <div className="border border-gray-200 shadow-md w-1/3 rounded-md ">
-                    <UpdateConfig />
-                </div>
-            </div>
+            </main>
         </div>
     );
 };

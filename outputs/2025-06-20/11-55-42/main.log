@@ -1,0 +1,210 @@
+[2025-06-20 11:55:44,174][flwr][INFO] - Starting Flower simulation, config: ServerConfig(num_rounds=1, round_timeout=None)
+[2025-06-20 11:55:51,349][flwr][INFO] - Flower VCE: Ray initialized with resources: {'GPU': 1.0, 'CPU': 8.0, 'memory': 3924042548.0, 'node:127.0.0.1': 1.0, 'object_store_memory': 1962021273.0}
+[2025-06-20 11:55:51,350][flwr][INFO] - Initializing global parameters
+[2025-06-20 11:55:51,350][flwr][INFO] - Requesting initial parameters from one random client
+[2025-06-20 11:55:56,541][flwr][INFO] - Received initial parameters from one random client
+[2025-06-20 11:55:56,542][flwr][INFO] - Evaluating initial parameters
+[2025-06-20 11:55:57,496][flwr][INFO] - initial parameters (loss, other metrics): 29.86500096321106, {'accuracy': 0.4989010989010989, 'precision': 0.0, 'recall': 0.0, 'f1_score': 0.0}
+[2025-06-20 11:55:57,497][flwr][INFO] - FL starting
+[2025-06-20 11:55:57,498][flwr][DEBUG] - fit_round 1: strategy sampled 10 clients (out of 10)
+[2025-06-20 11:56:54,318][flwr][DEBUG] - fit_round 1 received 10 results and 0 failures
+[2025-06-20 11:56:54,348][flwr][WARNING] - No fit_metrics_aggregation_fn provided
+[2025-06-20 11:56:55,120][flwr][INFO] - fit progress: (1, 27.862073600292206, {'accuracy': 0.6915750915750916, 'precision': 0.6784982935153584, 'recall': 0.7282051282051282, 'f1_score': 0.7024734982332156}, 57.62229090000001)
+[2025-06-20 11:56:55,202][flwr][DEBUG] - evaluate_round 1: strategy sampled 10 clients (out of 10)
+[2025-06-20 11:57:05,630][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=37600, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:05,727][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=2100, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:05,791][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=31832, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:05,907][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=35988, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:16,006][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=37600, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:16,048][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=31832, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:16,125][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=2100, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:16,647][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=35988, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:22,742][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=31832, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:22,742][flwr][ERROR] - [36mray::launch_and_evaluate()[39m (pid=37600, ip=127.0.0.1)
+  File "python\ray\_raylet.pyx", line 640, in ray._raylet.execute_task
+  File "python\ray\_raylet.pyx", line 644, in ray._raylet.execute_task
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\simulation\ray_transport\ray_client_proxy.py", line 160, in launch_and_evaluate
+    return maybe_call_evaluate(
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\client.py", line 205, in maybe_call_evaluate
+    return client.evaluate(evaluate_ins)
+  File "C:\Users\MSII\anaconda3\envs\flower_tutorial\lib\site-packages\flwr\client\app.py", line 328, in _evaluate
+    raise Exception(EXCEPTION_MESSAGE_WRONG_RETURN_TYPE_EVALUATE)
+Exception: 
+NumPyClient.evaluate did not return a tuple with 3 elements.
+The returned values should have the following type signature:
+
+    Tuple[float, int, Dict[str, Scalar]]
+
+Example
+-------
+
+    0.5, 10, {"accuracy": 0.95}
+[2025-06-20 11:57:22,747][flwr][DEBUG] - evaluate_round 1 received 0 results and 10 failures
+[2025-06-20 11:57:22,748][flwr][INFO] - FL finished in 85.2501953
+[2025-06-20 11:57:22,748][flwr][INFO] - app_fit: losses_distributed []
+[2025-06-20 11:57:22,749][flwr][INFO] - app_fit: metrics_distributed_fit {}
+[2025-06-20 11:57:22,750][flwr][INFO] - app_fit: metrics_distributed {}
+[2025-06-20 11:57:22,751][flwr][INFO] - app_fit: losses_centralized [(0, 29.86500096321106), (1, 27.862073600292206)]
+[2025-06-20 11:57:22,751][flwr][INFO] - app_fit: metrics_centralized {'accuracy': [(0, 0.4989010989010989), (1, 0.6915750915750916)], 'precision': [(0, 0.0), (1, 0.6784982935153584)], 'recall': [(0, 0.0), (1, 0.7282051282051282)], 'f1_score': [(0, 0.0), (1, 0.7024734982332156)]}
